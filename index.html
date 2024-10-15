@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Read Excel File</title>
+    <script src="https://unpkg.com/browse/read-excel-file@5.8.6/bundle/read-excel-file.min.js"></script>
+</head>
+
+<body>
+    <div style="margin: auto; width: 50%;margin-top: 80px; padding: 30px; background-color: #dedede;">
+        <h2>Excel to JSON Converter</h2>
+        <input type="file" id="input" />
+        <br><br>
+        <textarea name="json-data" id="json-data" rows="25" style="width: 100%;"></textarea>
+        <br><br>
+        <button id="dl-json">Download JSON file</button>
+    </div>
+
+    <script>
+        var input = document.getElementById('input');
+        input.addEventListener('change', function () {
+            readXLsxFile(input.files[0]).then(function(data) {
+                console.log(data);
+            });
+        })
+
+    </script>
+</body>
+
+</html>
